@@ -26,3 +26,16 @@ public class PayCalc {
 
     }
 }
+
+/*Experiemnt:
+
+Add type of employee (full-time or part-time)
+Add data member to indicate the basic pay of employee
+(basic pay for part-time is $20, full-time is $50)
+Add a variable to represent the number of hours
+    employee has worked.
+
+Add a method to calculate the final Pay for
+the employee considering the number of hours
+they have worked and their status.
+ */
