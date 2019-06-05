@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">RFM Cafe</string>
+    <string name="cream">Crème</string>
+    <string name="dom_lid">Couvercle Dom</string>
+    <string name="done">Terminé</string>
+    <string name="original_blend">Mélange d\'origine</string>
+    <string name="iced_capp">Capp glacé</string>
+    <string name="french_vanilla">Vanille française</string>
+    <string name="dark_roast">Torréfaction foncée</string>
+    <string name="place_order">Passer une autre commande</string>
+    <string name="prompt_addon">Veuillez sélectionner votre add-on</string>
+    <string name="prompt_coffee">Comment voudrais-tu ton café ?</string>
+    <string name="prompt_name">S\'il vous plaît entrez votre nom</string>
+    <string name="sleeve">Manche</string>
+    <string name="submit">Soumettre</string>
+    <string name="sugar">Sucre</string>
+    <string name="whipped_cream">Crème fouettée</string>
+    <string name="order_amt">Montant de la commande</string>
+    <string name="cancel">Annuler</string>
+    <string name="espresso_shot">Espresso shot</string>
+    <string name="one">Un</string>
+    <string name="two">Deux</string>
+    <string name="three">Trois</string>
+    <string name="four">Quatre</string>
+    <string-array name="number_array">
+        <item>@string/one</item>
+        <item>@string/two</item>
+        <item>@string/three</item>
+        <item>@string/four</item>
+    </string-array>
+</resources>

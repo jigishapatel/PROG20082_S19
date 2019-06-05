@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RFMCafe</string>
+    <string name="app_name" translatable="false">RFMCafe</string>
     <string name="title">RFM Cafe</string>
     <string name="prompt_coffee">How would you like your coffee ?</string>
     <string name="dark_roast">Dark Roast</string>
@@ -16,10 +16,17 @@
     <string name="prompt_name">Please enter your name</string>
     <string name="cancel">Cancel</string>
     <string name="submit">Submit</string>
+    <string name="order_amt">Order Amount</string>
+    <string name="done">Done</string>
+    <string name="place_order">Place Another Order</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
     <string-array name="number_array">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
+        <item>@string/one</item>
+        <item>@string/two</item>
+        <item>@string/three</item>
+        <item>@string/four</item>
     </string-array>
 </resources>
