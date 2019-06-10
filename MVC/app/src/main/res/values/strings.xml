@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MVC</string>
+    <string name="title">MVC</string>
+    <string name="submit">Submit</string>
+    <string name="signup">Sign Up</string>
+    <string name="signin">SignIn</string>
+    <string name="firstname_hint">Firstname</string>
+    <string name="lastname_hint">Lastname</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="phone_hint">Phone Number</string>
+    <string name="gender">Gender</string>
+    <string name="dob">Birthdate</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="no_disclosure">No Disclosure</string>
+    <string name="email_hint">Email address</string>
+    <string name="password_hint">Password</string>
+</resources>
