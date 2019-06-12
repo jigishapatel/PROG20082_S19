@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.jk.mvc.controller.UserController;
+import com.jk.mvc.model.User;
+
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
     String firstName;
@@ -28,12 +31,17 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     RadioButton rdoSelected;
     Button btnSubmit;
 
+    User newUser;
+    //create the instance of controller
+    UserController userController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
         this.referWidgets();
+        userController = new UserController();
     }
 
     private void referWidgets(){
@@ -55,6 +63,19 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()){
             case R.id.btn_submit:
                 //submit
+                if (this.validateData()){
+                    this.getValues();
+
+                    //load data to the model object
+                    newUser = new User(firstName, lastName, phoneNumber,
+                            gender, email, password);
+                    Log.d("signUpActivity", newUser.toString());
+                    userController.insertUser(newUser);
+
+                    Intent mainIntent = new Intent(this, MainActivity.class);
+                    mainIntent.putExtra("EXTRA_EMAIL", email);
+                    startActivity(mainIntent);
+                }
                 break;
         }
     }
@@ -68,4 +89,62 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         rdoSelected = findViewById(rdoGender.getCheckedRadioButtonId());
         gender = rdoSelected.getText().toString();
     }
+
+    /** method to validate the entered data for teh required constraints
+     */
+    private boolean validateData(){
+        boolean allValidations = true;
+
+        if (edtFname.getText().toString().isEmpty()){
+            edtFname.setError("You must enter first name");
+            allValidations = false;
+        }
+
+        if (edtLname.getText().toString().isEmpty()){
+            edtLname.setError("You must enter last name");
+            allValidations = false;
+        }
+
+        if (edtPhone.getText().toString().isEmpty()){
+            edtPhone.setError("You must provide phone number");
+            allValidations = false;
+        }
+
+        if (edtEmail.getText().toString().isEmpty()){
+            edtEmail.setError("Email cannot be empty");
+            allValidations = false;
+        }else if (!Utils.isValidEmail(edtEmail.getText().toString())){
+            edtEmail.setError("Please provide valid email address");
+            allValidations = false;
+        }
+
+        if (edtPswd.getText().toString().isEmpty()){
+            edtPswd.setError("Please enter password");
+            allValidations = false;
+        }
+
+        if (edtConfirm.getText().toString().isEmpty()){
+            edtConfirm.setError("You must enter confirm password");
+            allValidations = false;
+        }else if (!edtPswd.getText().toString().equals(edtConfirm.getText().toString())){
+            edtConfirm.setError("Both passwords must be same");
+            allValidations = false;
+        }
+
+        return allValidations;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
